@@ -1,5 +1,5 @@
 ---
-import EditModule from '../components/EditModule.svelte';
+import EditModal from '../components/EditModal.svelte';
 
 export interface Props {
 	title: string;
@@ -17,7 +17,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<EditModule/>
+		<EditModal client:load />
 		<div class="border-b border-black">
 			<div class="container flex justify-between items-center h-16">
 				<img src="/portal.png" class="h-12" alt="">

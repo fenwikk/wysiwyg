@@ -1,38 +1,27 @@
 <script lang="ts">
+import editingKey from "../stores/editing";
+
     import pageData from "../stores/pageData";
 
     export let editing: boolean = false
     export let key: string
-
-    let data = $pageData[key]
-
-    const onEdit = () => {
-        if (data.string == `<br>`)
-            data.string = ""
-        
-        let tempdata = $pageData
-        tempdata[key] = data
-        pageData.set(tempdata)
-
-        console.log($pageData)
-    }
 
     let className:string
     export { className as class }
 </script>
 
 {#if editing}
-    {#if data.type == "image"}
+    {#if $pageData[key].type == "image"}
         <div class="wrapper hover:-mt-5">
-            <div class="hover-menu h-5 bg-green w-fit px-1 flex justify-center items-center text-sm text-white cursor-pointer">Edit</div>
+            <div on:click={() => editingKey.set(key)} class="hover-menu h-5 bg-green w-fit px-1 flex justify-center items-center text-sm text-white cursor-pointer">Edit</div>
             <div class="image-wrapper border-2 border-transparent -my-[2px]">
-                <img src={data.string} class={className} alt="" />
+                <img src={$pageData[key].string} class={className} alt="" />
             </div>
         </div>
     {/if}
 {:else}
-    {#if data.type == "image"}
-        <img src={data.string} class={className} alt="" />
+    {#if $pageData[key].type == "image"}
+        <img src={$pageData[key].string} class={className} alt="" />
     {/if}
 {/if}
 
