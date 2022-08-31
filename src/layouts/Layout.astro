@@ -1,4 +1,6 @@
 ---
+import EditModule from '../components/EditModule.svelte';
+
 export interface Props {
 	title: string;
 }
@@ -12,11 +14,16 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="border-2 m-3">
+		<EditModule/>
+		<div class="border-b border-black">
+			<div class="container flex justify-between items-center h-16">
+				<img src="/portal.png" class="h-12" alt="">
+			</div>
+		</div>
+		<div class="relative">
 			<slot />
 		</div>
 	</body>

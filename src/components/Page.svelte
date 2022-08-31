@@ -1,5 +1,5 @@
 <script lang="ts">
-	import pageData from "../stores/PageData";
+	import pageData from "../stores/pageData";
 	import Editable from "./Editable.svelte";
 import EditableImage from "./EditableImage.svelte";
 
@@ -16,7 +16,7 @@ import EditableImage from "./EditableImage.svelte";
 	class="w-full py-52 px-8 md:py-64 flex flex-col justify-center items-center bg-yellow relative"
 >
 	<div class="z-10 relative">
-		<h1 class="min-w-80 font-playfair font-medium text-5xl md:text-7xl leading-snug mb-12 md:mr-32 lg:mr-96">
+		<h1 class="s-w-80 font-playfair font-medium text-5xl md:text-7xl leading-snug mb-12 md:mr-32 lg:mr-96">
 			<Editable {editing} key="HeroH" />
 		</h1>
 		<p class="w-80 text-xl md:text-2xl">

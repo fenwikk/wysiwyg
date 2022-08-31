@@ -1,5 +1,5 @@
 <script lang="ts">
-    import pageData from "../stores/PageData";
+    import pageData from "../stores/pageData";
 
     export let editing: boolean = false
     export let key: string

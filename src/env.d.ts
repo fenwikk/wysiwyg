@@ -7,7 +7,6 @@ type PageData = {
 type Editable = {
   type: EditableType;
   string?: string;
-  button?: Button;
 };
 
 type EditableType = "string" | "image" | "error";
