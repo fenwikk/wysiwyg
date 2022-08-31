@@ -23,8 +23,11 @@
 
 {#if editing}
     {#if data.type == "image"}
-        <div class="border-2 border-transparent hover:border-green :border-red-400 p-[2px] -m-1">
-            <img src={data.string} class={className} alt="" />
+        <div class="wrapper hover:-mt-5">
+            <div class="hover-menu h-5 bg-green w-fit px-1 flex justify-center items-center text-sm text-white cursor-pointer">Edit</div>
+            <div class="image-wrapper border-2 border-transparent -my-[2px]">
+                <img src={data.string} class={className} alt="" />
+            </div>
         </div>
     {/if}
 {:else}
@@ -32,3 +35,16 @@
         <img src={data.string} class={className} alt="" />
     {/if}
 {/if}
+
+<style>
+    .hover-menu {
+        display: none;
+    }
+    .wrapper:hover > .hover-menu {
+        display: block;
+    }
+
+    .wrapper:hover > .image-wrapper {
+        border-color: rgb(150 168 82);
+    }
+</style>
