@@ -1,38 +1,40 @@
 <script lang="ts">
+    import pageData from "../stores/PageData";
+
     export let editing: boolean = false
-    export let input: Editable = { type: "error" }
+    export let key: string
 
-    if (input.type == "error") throw new Error("Sum ting wong");
-    
+    let data = $pageData[key]
 
-    let data = input.string
+    const onEdit = () => {
+        if (data.string == `<br>`)
+            data.string = ""
+        
+        let tempdata = $pageData
+        tempdata[key] = data
+        pageData.set(tempdata)
 
-    const check = () => {
-        console.log(data)
+        console.log($pageData)
     }
 </script>
 
 {#if editing}
-    {#if input.type == "string" || input.type == "html"}
-        <div contenteditable="true" placeholder="hu" on:change={()=> console.log(data)} bind:innerHTML={data}>
+    {#if data.type == "string"}
+        <div class="border-2 border-transparent hover:border-green :border-red-400 p-[2px] -m-1" contenteditable="true" placeholder="Click to edit" on:keyup={onEdit} bind:innerHTML={data.string}>
 
         </div>
     {/if}
 {:else}
-    {#if input.type == "string"}
-        {data}
-    {:else if input.type == "html"}
-        {@html data}
+    {#if data.type == "string"}
+        {@html data.string}
     {/if}
 {/if}
 
-<button onclick={() => alert("hi")}>Check</button>
-
 <style>
     [contenteditable][placeholder]:empty:before {
-  content: attr(placeholder);
-  position: absolute;
-  color: gray;
-  background-color: transparent;
-}
+        content: attr(placeholder);
+        position: absolute;
+        color: gray;
+        background-color: transparent;
+    }
 </style>

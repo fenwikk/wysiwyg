@@ -10,7 +10,7 @@ type Editable = {
   button?: Button;
 };
 
-type EditableType = "string" | "html" | "button" | "error";
+type EditableType = "string" | "image" | "error";
 
 type Button = {
   href: string;

@@ -1,20 +1,24 @@
 import { writable } from "svelte/store";
 
 const pageData = writable<PageData>({
+  Logo: {
+    type: "image",
+    string: "/logo.png",
+  },
   HeroH: {
-    type: "html",
+    type: "string",
     string: "Hi",
   },
   HeroB: {
-    type: "html",
+    type: "string",
     string: "yeah",
   },
   AboutH: {
-    type: "html",
+    type: "string",
     string: "Hi",
   },
   AboutB: {
-    type: "html",
+    type: "string",
     string: "yeah",
   },
 });

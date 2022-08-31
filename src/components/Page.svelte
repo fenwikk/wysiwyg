@@ -1,13 +1,14 @@
 <script lang="ts">
 	import pageData from "../stores/PageData";
 	import Editable from "./Editable.svelte";
+import EditableImage from "./EditableImage.svelte";
 
 	export let editing = false
 </script>
 
 <div class="z-20 absolute top-0 w-full">
 	<div class="container flex items-center justify-between py-8 md:py-16">
-		<!-- <img src={logo} class="h-24" alt="" /> -->
+		<EditableImage {editing} key="Logo" class="h-24" />
 	</div>
 </div>
 
@@ -16,10 +17,10 @@
 >
 	<div class="z-10 relative">
 		<h1 class="font-playfair font-medium text-5xl md:text-7xl leading-snug mb-12 md:mr-32 lg:mr-96">
-			<Editable {editing} input={$pageData["HeroH"]} />
+			<Editable {editing} key="HeroH" />
 		</h1>
 		<p class="w-80 text-xl md:text-2xl">
-			<Editable {editing} input={$pageData["HeroB"]} />
+			<Editable {editing} key="HeroB" />
 		</p>
 
 		<div class="mt-10">
@@ -51,10 +52,10 @@
 	<!-- <img src={plant} class="hidden md:block h-96 -mt-12 mr-16" alt="" /> -->
 	<div class="md:w-1/2">
 		<h2 class="font-playfair font-bold text-4xl leading-loose text-center md:text-left">
-			<Editable {editing} input={$pageData["AboutH"]} />
+			<Editable {editing} key="AboutH" />
 		</h2>
 		<p class="text-center text-lg md:text-left">
-			<Editable {editing} input={$pageData["AboutB"]} />
+			<Editable {editing} key="AboutB" />
 		</p>
 		<!-- <button class="text-xl mt-6 border-black border-b-2 pt-[6px] mb-1 hover:border-transparent hover:mb-0 hover:pb-1 duration-200">Läs mer</button> -->
 	</div>
