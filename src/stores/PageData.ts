@@ -18,6 +18,14 @@ const pageData = writable<PageData>({
     string:
       "Genom hydroponiska lösningar odlar vi våra växter i vatten istället för vanlig jord. Spara pengar, vatten och rädda världen du med idag!",
   },
+  Florist: {
+    type: "image",
+    string: "/florist.png",
+  },
+  Plant: {
+    type: "image",
+    string: "/plant.png",
+  },
   AboutH: {
     type: "string",
     string: "Om Oss",

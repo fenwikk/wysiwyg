@@ -45,24 +45,29 @@ import EditableImage from "./EditableImage.svelte";
 				<!-- <button class="text-xl ml-4 border-black border-b-2 pt-[2px] hover:border-transparent hover:pt-[6pt] hover:pb-1 duration-200">Läs mer</button> -->
 			</div>
 	
-			<!-- <img src={florist} class="hidden md:block absolute top-32 left-[350px]" alt="" /> -->
+			<div class="hidden md:block absolute top-32 left-[500px] ">
+				<EditableImage {editing} key="Florist" class="h-[524px]" />
+			</div>
 		</div>
-	
+		
 		<!-- <img
 			src={vase1}
 			class="z- 10 block md:hidden absolute h-64 right-16 -bottom-8 rotate-12"
 			alt="vase"
-		/> -->
-		<!-- <img src={vase2} class="block md:hidden absolute h-44 -left-28 bottom-64 -rotate-45" alt="vase" /> -->
-		<!-- <img
-			src={wateringCan}
-			class="block md:hidden absolute h-44 -right-16 -top-8 -rotate-45"
-			alt="vase"
-		/> -->
-	</div>
-	
+			/> -->
+			<!-- <img src={vase2} class="block md:hidden absolute h-44 -left-28 bottom-64 -rotate-45" alt="vase" /> -->
+			<!-- <img
+				src={wateringCan}
+				class="block md:hidden absolute h-44 -right-16 -top-8 -rotate-45"
+				alt="vase"
+				/> -->
+			</div>
+			
 	<div class="container flex justify-center items-center py-32 md:py-32">
-		<!-- <img src={plant} class="hidden md:block h-96 -mt-12 mr-16" alt="" /> -->
+		<div class="hidden md:block -mt-12 mr-16">
+			<EditableImage {editing} key="Plant" class="h-96" />
+		</div>
+		
 		<div class="md:w-1/2">
 			<h2 class="font-playfair font-bold text-4xl leading-loose text-center md:text-left">
 				<Editable {editing} key="AboutH" />
