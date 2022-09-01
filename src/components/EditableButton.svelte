@@ -14,7 +14,7 @@ import editingKey from "../stores/editing";
     {#if $pageData[key].type == "button"}
         <div class="wrapper hover:-mt-5">
             <div on:click={() => editingKey.set(key)} class="hover-menu h-5 bg-green w-fit px-1 flex justify-center items-center text-sm text-white cursor-pointer">Edit</div>
-            <div class="button-wrapper">
+            <div class="button-wrapper border-2 border-transparent -my-[2px]">
                 <button
 					class={className}
 					href={$pageData[key].button?.href}
