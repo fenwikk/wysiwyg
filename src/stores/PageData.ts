@@ -21,6 +21,13 @@ const pageData = writable<PageData>({
     string:
       "Genom hydroponiska lösningar odlar vi våra växter i vatten istället för vanlig jord. Spara pengar, vatten och rädda världen du med idag!",
   },
+  HeroCTA: {
+    type: "button",
+    button: {
+      href: "https://www.facebook.com/davidsonsfritsla",
+      label: "Börja Shoppa",
+    },
+  },
   Florist: {
     type: "image",
     image: {

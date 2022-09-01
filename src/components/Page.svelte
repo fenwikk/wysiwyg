@@ -3,6 +3,7 @@ import editingKey from "../stores/editing";
 
 	import pageData from "../stores/pageData";
 	import Editable from "./Editable.svelte";
+import EditableButton from "./EditableButton.svelte";
 import EditableImage from "./EditableImage.svelte";
 
 	export let editing = false
@@ -37,11 +38,7 @@ import EditableImage from "./EditableImage.svelte";
 			</p>
 	
 			<div class="mt-10">
-				<!-- <button
-					class="bg-green hover:bg-lime-700 py-3 px-5 md:py-4 md:px-7 rounded-full text-lg md:text-xl text-white duration-200"
-					on:click={() => goto(page?.sections[0].ctas[0]?.url || '')}
-					>{@html page?.sections[0].ctas[0]?.text}</button
-				> -->
+				<EditableButton {editing} key="HeroCTA" class="bg-green hover:bg-lime-700 py-3 px-5 md:py-4 md:px-7 rounded-full text-lg md:text-xl text-white duration-200" />
 				<!-- <button class="text-xl ml-4 border-black border-b-2 pt-[2px] hover:border-transparent hover:pt-[6pt] hover:pb-1 duration-200">Läs mer</button> -->
 			</div>
 	
@@ -67,7 +64,7 @@ import EditableImage from "./EditableImage.svelte";
 		<div class="hidden md:block -mt-12 mr-16">
 			<EditableImage {editing} key="Plant" class="h-96" />
 		</div>
-		
+
 		<div class="md:w-1/2">
 			<h2 class="font-playfair font-bold text-4xl leading-loose text-center md:text-left">
 				<Editable {editing} key="AboutH" />

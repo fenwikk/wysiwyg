@@ -8,9 +8,10 @@ type Editable = {
   type: EditableType;
   string?: string;
   image?: Image;
+  button?: Button;
 };
 
-type EditableType = "string" | "image" | "error";
+type EditableType = "string" | "image" | "button" | "error";
 
 type Image = {
   src: string;
