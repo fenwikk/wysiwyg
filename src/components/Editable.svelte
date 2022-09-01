@@ -1,4 +1,5 @@
 <script lang="ts">
+    import "../editor.css"
     import pageData from "../stores/pageData";
 
     export let editing: boolean = false
@@ -20,9 +21,7 @@
 
 {#if editing}
     {#if data.type == "string"}
-        <div class="border-2 border-transparent hover:border-green :border-red-400 p-[2px] -m-1" contenteditable="true" placeholder="Click to edit" on:keyup={onEdit} bind:innerHTML={data.string}>
-
-        </div>
+        <div class="editable-content-wrapper" contenteditable="true" placeholder="Click to edit" on:keyup={onEdit} bind:innerHTML={data.string} />
     {/if}
 {:else}
     {#if data.type == "string"}

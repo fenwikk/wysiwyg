@@ -1,0 +1,20 @@
+.editable-wrapper {
+  @apply hover:-mt-5 -mx-[2px];
+}
+
+.hover-menu {
+  @apply hidden h-5 bg-blue-400 w-fit px-1 justify-center items-center text-sm text-white cursor-pointer;
+}
+
+.editable-wrapper:hover > .hover-menu {
+  @apply flex;
+}
+
+.editable-wrapper:hover > .editable-content-wrapper,
+.editable-content-wrapper:hover {
+  @apply border-blue-400;
+}
+
+.editable-content-wrapper {
+  @apply border-2 border-transparent -my-[2px];
+}

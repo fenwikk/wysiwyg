@@ -1,20 +1,22 @@
 <script lang="ts">
+import "../editor.css"
+
 import editingKey from "../stores/editing";
 
-    import pageData from "../stores/pageData";
+import pageData from "../stores/pageData";
 
-    export let editing: boolean = false
-    export let key: string
+export let editing: boolean = false
+export let key: string
 
-    let className: string
-    export { className as class }
+let className: string
+export { className as class }
 </script>
 
 {#if editing}
     {#if $pageData[key].type == "button"}
-        <div class="wrapper hover:-mt-5">
-            <div on:click={() => editingKey.set(key)} class="hover-menu h-5 bg-green w-fit px-1 flex justify-center items-center text-sm text-white cursor-pointer">Edit</div>
-            <div class="button-wrapper border-2 border-transparent -my-[2px]">
+        <div class="editable-wrapper">
+            <div on:click={() => editingKey.set(key)} class="hover-menu">Edit</div>
+            <div class="editable-content-wrapper">
                 <button
 					class={className}
 					href={$pageData[key].button?.href}
@@ -28,20 +30,8 @@ import editingKey from "../stores/editing";
         <button
             class={className}
             href={$pageData[key].button?.href}
-            >{@html $pageData[key].button?.label}</button
         >
+            {@html $pageData[key].button?.label}
+        </button>
     {/if}
 {/if}
-
-<style>
-    .hover-menu {
-        display: none;
-    }
-    .wrapper:hover > .hover-menu {
-        display: block;
-    }
-
-    .wrapper:hover > .button-wrapper {
-        border-color: rgb(150 168 82);
-    }
-</style>
