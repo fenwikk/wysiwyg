@@ -6,7 +6,7 @@ import editingKey from "../stores/editing";
     export let editing: boolean = false
     export let key: string
 
-    let className:string
+    let className: string
     export { className as class }
 </script>
 
@@ -15,13 +15,13 @@ import editingKey from "../stores/editing";
         <div class="wrapper hover:-mt-5">
             <div on:click={() => editingKey.set(key)} class="hover-menu h-5 bg-green w-fit px-1 flex justify-center items-center text-sm text-white cursor-pointer">Edit</div>
             <div class="image-wrapper border-2 border-transparent -my-[2px]">
-                <img src={$pageData[key].string} class={className} alt="" />
+                <img src={$pageData[key].image?.src} class={className} alt={$pageData[key].image?.alt} />
             </div>
         </div>
     {/if}
 {:else}
     {#if $pageData[key].type == "image"}
-        <img src={$pageData[key].string} class={className} alt="" />
+        <img src={$pageData[key].image?.src} class={className} alt={$pageData[key].image?.alt} />
     {/if}
 {/if}
 

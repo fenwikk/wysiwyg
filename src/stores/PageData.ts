@@ -7,7 +7,10 @@ const pageData = writable<PageData>({
   },
   Logo: {
     type: "image",
-    string: "/logo.png",
+    image: {
+      src: "/logo.png",
+      alt: "Davidsons Logo",
+    },
   },
   HeroH: {
     type: "string",
@@ -20,11 +23,17 @@ const pageData = writable<PageData>({
   },
   Florist: {
     type: "image",
-    string: "/florist.png",
+    image: {
+      src: "/florist.png",
+      alt: "Kid playing with hydroponics",
+    },
   },
   Plant: {
     type: "image",
-    string: "/plant.png",
+    image: {
+      src: "/plant.png",
+      alt: "Hydroponics setup",
+    },
   },
   AboutH: {
     type: "string",
